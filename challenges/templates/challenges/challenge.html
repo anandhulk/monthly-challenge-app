@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ text1|title }}</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %} {{ text1|title }} {% endblock %}
+
+{% block content %}
+
     <h1>{{ text1|title }}</h1>
     {% if text != None %}
         <h3>{{ text }}</h3>
     {% else %}
         <h3>There is no challenge for this month yet!</h3>
     {% endif %}
-</body>
-</html>
+
+{% endblock %}
