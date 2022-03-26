@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.template.loader import render_to_string
 # Create your views here.
 
 
@@ -31,8 +32,9 @@ def index(request):
 def m_challenges(request,month):
     try:
         m=c_dict[month]
-        response_data=f"<h1>{m}</h1>"
-        return HttpResponse(response_data)
+        #response_data=render_to_string("challenges/challenge.html") #f"<h1>{m}</h1>"
+        #return HttpResponse(response_data)
+        return render(request,"challenges/challenge.html")
     except:
         return HttpResponseNotFound("month not supported")   
 
