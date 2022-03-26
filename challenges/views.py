@@ -34,7 +34,10 @@ def m_challenges(request,month):
         m=c_dict[month]
         #response_data=render_to_string("challenges/challenge.html") #f"<h1>{m}</h1>"
         #return HttpResponse(response_data)
-        return render(request,"challenges/challenge.html")
+        return render(request,"challenges/challenge.html",{
+            "text":m,
+            "text1":month
+        })
     except:
         return HttpResponseNotFound("month not supported")   
 
