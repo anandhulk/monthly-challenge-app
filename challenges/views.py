@@ -16,17 +16,14 @@ c_dict={
     'september':'onam comming',
     'october':'its 10th month',
     'november':'dont ever think of shaving',
-    'december':'drink the last bottle of bear'
+    'december': None
 }
 def index(request):
-    month_list=""
     months=list(c_dict.keys())
 
-    for month in months:
-        month_list+=f"<li><a href='{month}'>{month.capitalize()}</a></li>"
-    
-    reponse=f"<ul>{month_list}</ul>"
-    return HttpResponse(reponse)
+    return render(request,"challenges/index.html",{
+        "months":months
+    })
 
 
 def m_challenges(request,month):
