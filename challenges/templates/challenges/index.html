@@ -1,7 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'challenges/index.css' %}">
+{% endblock %}
 
 {% block title %}Challenges{% endblock %}
 {% block content %}
+{% include "challenges/includes/nav.html" %}
 <h3>
     <ul>
         {% for month in months %}
