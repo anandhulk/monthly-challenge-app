@@ -1,5 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'challenges/challenges.css' %}">
+{% endblock %}
+
 {% block title %} {{ text1|title }} {% endblock %}
+
+
 
 {% block content %}
     {% include "challenges/includes/nav.html"  %}
@@ -7,7 +15,7 @@
     {% if text != None %}
         <h3>{{ text }}</h3>
     {% else %}
-        <h3>There is no challenge for this month yet!</h3>
+        <h4>There is no challenge for this month yet!</h4>
     {% endif %}
 
 {% endblock %}
